@@ -6,7 +6,6 @@
 var express = require("express"),
 	app = express(),
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
 	mongoose = require('mongoose'),
 	fs = require("fs"),
 	fse = require("fs-extra"),
@@ -16,6 +15,7 @@ var express = require("express"),
 	favicon = require('serve-favicon'),
 	bcrypt = require('bcrypt-nodejs'),
 	salt = bcrypt.genSaltSync(7);
+const io = require('socket.io').listen(server);
 
 /*var flatfile = require('flat-file-db'),
 	accDB = flatfile.sync(__dirname + '/db/accounts.db'),
